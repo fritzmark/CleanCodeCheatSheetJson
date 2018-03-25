@@ -10,10 +10,13 @@ The data is licensed under: https://creativecommons.org/licenses/by/4.0/
 Format of data:
 
 ```
- { pagenumber : {headers : {subheaders : {text : "the actual text of a cheat",type : "+ for postive (you should do this), - for negative (you should avoid this)"}
-                           }
+ { pagenumber : {headers : 
+                    {subheaders : 
+                         {text : "the actual text of a cheat",
+                          type : "+ for postive (you should do this), - for negative (you should avoid this)"
+                          }
+                     }
                  },
-   "license" : {containg license information
-               }
+   "license" : {containg license information}
  }
 ```
