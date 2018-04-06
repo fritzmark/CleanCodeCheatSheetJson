@@ -1,5 +1,5 @@
 {
-    "1": {
+    "Clean Code Cheat Sheet": {
         "Principles": {
             "Loose Coupling": {
                 "text": "Two classes, components or modules are coupled when at least one of \nthem uses the other. The less these items know about each other, the \nlooser they are coupled. \n\nA component that is only loosely coupled to its environment can be more \neasily changed or replaced than a strongly coupled component. \n",
@@ -19,7 +19,7 @@
             },
             "Mind-sized Components": {
                 "text": "Break your system down into components that are of a size you can grasp \nwithin your mind so that you can predict consequences of changes easily \n(dependencies, control flow, ...). \n\n",
-                "type": "-"
+                "type": "+"
             }
         },
         "Smells": {
@@ -285,9 +285,7 @@
                 "text": "No prefixes, no type/scope information \n\n \n",
                 "type": "-"
             }
-        }
-    },
-    "2": {
+        },
         "Understandability": {
             "Consistency": {
                 "text": "If you do something a certain way, do all similar things in the same way: \nsame variable name for same concepts, same naming pattern for \ncorresponding concepts. \n",
@@ -463,7 +461,7 @@
             },
             "4) Identify Components": {
                 "text": "Within a feature, identify the components used to provide the feature. \nPrioritise components according to relevance for future development \n(likelihood and risk of change). \n",
-                "type": "-"
+                "type": "+"
             },
             "5) Refactor Interfaces between Components": {
                 "text": "Refactor (or introduce) interfaces between components so that each \ncomponent can be tested in isolation of its environment. \n",
@@ -521,7 +519,7 @@
             }
         }
     },
-    "3": {
+    "Clean ATDD/TDD Cheat Sheet": {
         "Kinds of Automated Tests": {
             "ATDD - Acceptance Test Driven Development": {
                 "text": "Specify a feature first with a test, then implement. \n",
@@ -663,7 +661,7 @@
             },
             "Test Needing Excessive Setup": {
                 "text": "A test that needs dozens of lines of code to set up its environment. This \nnoise makes it difficult to see what is really tested. \n",
-                "type": "+"
+                "type": "-"
             },
             "Too Large Test / Assertions for Multiple Scenarios": {
                 "text": "A valid test that is, however, too large. Reasons can be that this test checks \nfor more than one feature or the testee does more than one thing (violation \nof Single Responsibility Principle). \n",
@@ -843,9 +841,7 @@
                 "text": "Do not write acceptance tests for every possibility. Write acceptance tests \nonly for real scenarios. The exceptional and theoretical cases can be \ncovered more easily with unit tests.  \n\nDO \nDON'T \n\n\n \n",
                 "type": "-"
             }
-        }
-    },
-    "4": {
+        },
         "Continuous Integration": {
             "Pre-Commit Check": {
                 "text": "Run all unit and acceptance tests covering currently worked on code prior to \ncommitting to the source code repository. \n",
