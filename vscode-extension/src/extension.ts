@@ -1,18 +1,31 @@
 import * as vscode from 'vscode';
 
-export function activate(context: vscode.ExtensionContext) {
+const myStatusBarItem: vscode.StatusBarItem = vscode.window.createStatusBarItem(
+  vscode.StatusBarAlignment.Right,
+  100
+);
+myStatusBarItem.text = "Clean Code Tips";
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.displayTip', () => {
-		// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Principles 🗽 > Loose Coupling: Two classes, components or modules are coupled when at least one of \nthem uses the other. The less these items know about each other, the \nlooser they are coupled. \n\nA component that is only loosely coupled to its environment can be more \neasily changed or replaced than a strongly coupled component. \n');
-	});
+export function activate({ subscriptions }: vscode.ExtensionContext) {
+  
 
-	context.subscriptions.push(disposable);
+  subscriptions.push(vscode.commands.registerCommand("onCommand:extension.displayTip", () => {
+    // Display a message box to the user
+    vscode.window.showInformationMessage(
+      'Principles 🗽 > High Cohesion: Cohesion is the degree to which elements of a whole belong together. \nMethods and fields in a single class and classes of a component should have \nhigh cohesion. High cohesion in classes and components results in simpler, \nmore easily understandable code structure and design. \n'
+      );
+  }));
+  
+  myStatusBarItem.command = "onCommand:extension.displayTip";
+
+	// Display a message box to the user
+	vscode.window.showInformationMessage(
+	'Principles 🗽 > High Cohesion > Cohesion is the degree to which elements of a whole belong together. \nMethods and fields in a single class and classes of a component should have \nhigh cohesion. High cohesion in classes and components results in simpler, \nmore easily understandable code structure and design. \n'
+	);
+
+	subscriptions.push(myStatusBarItem);
+	myStatusBarItem.show();
 }
 
 // this method is called when your extension is deactivated
