@@ -1,6 +1,6 @@
 {
-	"name": "clean-coding-tips",
-	"displayName": "Clean Coding Tips",
+	"name": "clean-code-tips",
+	"displayName": "Clean Code Tips",
 	"description": "Become a better engineer!",
 	"version": "0.0.1",
 	"engines": {
@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.displayTip"
+		"onCommand:extension.displayTip",
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
